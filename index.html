@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ACG WATCH</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awsm.css@3.0.4/dist/awsm_theme_pearl-lusta.min.css">
+	<script type="text/javascript">block_aplayer = true;</script>
+	<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>ACG.WATCH</h1>
+		<p>Watch ACG video <abbr title="At ACG.WATCH">ONLINE</abbr></p>
+		<nav>
+			<ul>
+				<li><a href="./" aria-hidden="false">Homepage</a></li>
+				<li><a href="./">Playlist</a></li>
+				<li><a href="https://iotcat.me/">About Me</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<article id="content">
+			<section>
+				<aside>
+					<p>
+						<strong>S.F.</strong>
+						<script>document.write('<a href="https://acg.watch/player/?url='+cookie.get('last_watch')+'">Continue Your Last Watch</a>');</script>
+					</p>
+					<p>
+						<strong>R.L.</strong>
+						<a href="#" onClick="reload()">Reload Cache</a>
+					</p>
+				</aside>
+			</section>
+		</article>
+	</main>
+    <footer>
+    	<p style="text-align: center;"> Powered By Ushio | Made with love by <a href="https://iotcat.me">iotcat</a> </p>
+    	<br>
+    </footer>
+	<script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+	<script type="text/javascript">
+		var root = 'https://acg.watch/';
+		$.get(root+'api/getAll', res => {
+            console.log(res);
+			//res = JSON.parse(res);
+			Object.keys(res).forEach(classes => {
+				var section = `
+				<section>
+					<h2>${classes}</h2>`;
+				Object.keys(res[classes]).forEach(series => {
+					section += `
+					<details>
+						<summary>${res[classes][series]['series']}</summary>
+						<ul>`;
+
+					res[classes][series]['video'].forEach(video => {
+						section += `
+							<li><a href="${root+'player?url='+video.url}">${video.name}</a></li>`;
+					});
+
+					section += `
+						</ul>
+					</details>`;
+				});
+				section += `
+				</section>`;
+				$('#content').append(section);
+			});
+		});
+        /* reload func */
+        function reload(){
+            $.get('https://acg.watch/reloadCache.php', err => location.reload());
+        }
+	</script>
+</body>
+</html>

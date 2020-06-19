@@ -1,7 +1,7 @@
 <?php
-require '/home/yimian/www/acg.watch/.db.key.php';
-require '/home/yimian/www/settlement/.config.php';
-include '/home/ushio/conf/dbKeys/log.db.key.php';
+require '/mnt/config/dbKeys/acg.watch.php';
+require '/mnt/config/php/config.php';
+include '/mnt/config/dbKeys/log.php';
 
 
 /* acg.watch */

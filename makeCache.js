@@ -49,6 +49,7 @@ var getVideoInfo = (fName, conf, item) => {
    o['name'] = getVideoName(arr, conf);
    o['danmakuID'] = md5(item+o.no).substring(0, 8); 
    o['url'] = 'https://onedrive.yimian.xyz/video/' + item + '/' + fName;
+   o['extra'] = ['https://yimian-video.obs.cn-east-2.myhuaweicloud.com/' + item + '/' + fName];
 
    return o;
 }

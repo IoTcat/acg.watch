@@ -1,3 +1,4 @@
 .config.php
 .db.key.php
 cache/
+node_modules/

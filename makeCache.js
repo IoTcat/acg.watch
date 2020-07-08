@@ -1,7 +1,7 @@
 const fs = require('fs');
 const md5 = require('md5');
 
-const _dir = '/mnt/onedrive/public/video/';
+const _dir = '/mnt/public/video/';
 
 var video = {};
 
@@ -34,7 +34,7 @@ fs.readdir(_dir, (err, series)=>{
  
     });
     console.log(video.acg.YuruYuri.video);
-    fs.writeFile(__dirname+'/cache/video.json', JSON.stringify(video), 'utf8', err=>console.log(err));
+    fs.writeFile('/mnt/cache/video/video.json', JSON.stringify(video), 'utf8', err=>console.log(err));
 });
 
 

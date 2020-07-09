@@ -49,7 +49,7 @@ var getVideoInfo = (fName, conf, item) => {
    o['name'] = getVideoName(arr, conf);
    o['danmakuID'] = md5(item+o.no).substring(0, 8); 
    o['url'] = 'https://onedrive.yimian.xyz/video/' + item + '/' + fName;
-   o['extra'] = ['https://proxy.yimian.xyz/get/?url='+(new Buffer(o['url']).toString('base64')), 'https://api.yimian.xyz/video/?path=' + item + '/' + fName];
+   o['extra'] = ['https://proxy.yimian.xyz/get/?url='+(new Buffer(o['url']).toString('base64'))];
 
    return o;
 }

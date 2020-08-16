@@ -25,7 +25,8 @@
 				<aside>
 					<p>
 						<strong>S.F.</strong>
-						<script>document.write('<a href="https://acg.watch/player/?url='+cookie.get('last_watch')+'">Continue Your Last Watch</a>');</script>
+                        <span id="last_watch"><span>
+                        <script>session.onload(function(){if(session.get('acg/last_watch'))$('#last_watch').html('<a href="https://acg.watch/player/?url='+session.get('acg/last_watch')+'">Continue Your Last Watch</a>');});</script>
 					</p>
 					<p>
 						<strong>R.L.</strong>

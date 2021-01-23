@@ -1,7 +1,7 @@
 const fs = require('fs');
 const md5 = require('md5');
 
-const _dir = '/mnt/public/video/';
+const _dir = '/o/video/';
 
 var video = {};
 

@@ -34,7 +34,7 @@ fs.readdir(_dir, (err, series)=>{
  
     });
     console.log(video.acg.YuruYuri.video);
-    fs.writeFile('/mnt/cache/video/video.json', JSON.stringify(video), 'utf8', err=>console.log(err));
+    fs.writeFile('/mnt/var/cache/acg.watch/video.json', JSON.stringify(video), 'utf8', err=>console.log(err));
 });
 
 

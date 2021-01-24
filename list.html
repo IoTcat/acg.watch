@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awsm.css@3.0.4/dist/awsm_theme_pearl-lusta.min.css">
 	<script type="text/javascript">block_aplayer = true;lang = ['zh', 'en'];</script>
 	<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
-	<script type="text/javascript">page.proj = 'iotcat/acg.watch';</script>
+	<script type="text/javascript">page.auth = ['any'];page.proj = 'iotcat/acg.watch';</script>
     <script>//page.auth = ['any'];</script>
 </head>
 <body>
@@ -29,10 +29,6 @@
 						<strong>S.F.</strong>
                         <span id="last_watch"><span>
                         <script>session.onload(function(){if(session.get('acg/last_watch'))$('#last_watch').html('<a href="https://acg.watch/player/?url='+session.get('acg/last_watch')+'">'+((page.tran.getLang() == 'zh')?'继续上次观看':'Continue Your Last Watch')+'</a>');});</script>
-					</p>
-					<p>
-                            <strong>R.L.</strong> <span class=".zh">从链接播放视频</span><span class=".en">Play video form URL</span>
-                            <p><input type="text" id="url"><button onClick="window.location.href='/player/?url='+$('#url').val()"><span class=".zh">播放</span><span class=".en">Play</span></button></p>
 					</p>
 				</aside>
 			</section>
@@ -69,7 +65,7 @@
 				});
 				section += `
 				</section>`;
-				//$('#content').append(section);
+				$('#content').append(section);
 			});
 		});
         /* reload func */

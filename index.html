@@ -31,8 +31,10 @@
                         <script>session.onload(function(){if(session.get('acg/last_watch'))$('#last_watch').html('<a href="https://acg.watch/player/?url='+session.get('acg/last_watch')+'">'+((page.tran.getLang() == 'zh')?'继续上次观看':'Continue Your Last Watch')+'</a>');});</script>
 					</p>
 					<p>
-						<strong>R.L.</strong>
-						<a href="#" onClick="reload()"><span class=".zh">重载缓存</span><span class=".en">Reload Cache</span></a>
+                        <details>
+                            <summary><strong>R.L.</strong> <span class=".zh">从链接播放视频</span><span class=".en">Play video form URL</span></summary>
+                            <p><input type="text" id="url"><button onClick="window.location.href='/player/?url='+$('#url').val()"><span class=".zh">播放</span><span class=".en">Play</span></button></p>
+                        </details>
 					</p>
 				</aside>
 			</section>
